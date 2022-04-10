@@ -7,6 +7,11 @@ import Button from '@mui/material/Button';
 import CardActions from '@mui/material/CardActions';
 
 const BookItem = (props) => {
+
+  const learnMore = () => {
+    
+  }
+
  return (
     <Card sx={{ maxWidth: 345, height: 'auto' }}>
         <CardMedia
@@ -27,8 +32,8 @@ const BookItem = (props) => {
           </Typography>
        </CardContent>
        <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
+        <Button size="small">SHARE</Button>
+        <Button size="small" onClick={() => window.open(`${props.book.amazon_product_url}`, "_blank")}>Amazon</Button>
       </CardActions>
     </Card>
   );

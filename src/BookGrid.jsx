@@ -10,8 +10,8 @@ export default function BookGrid(props) {
 
   const data = props.books.map((book, i) => {
   return (
-        <Grid item xs={4}>
-          <BookItem key ={i} book= {book} />
+        <Grid key ={i} item xs={4}>
+          <BookItem  book= {book} />
         </Grid>    
       
             
