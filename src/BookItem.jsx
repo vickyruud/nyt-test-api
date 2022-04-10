@@ -19,7 +19,7 @@ const BookItem = (props) => {
           <Typography gutterBottom variant="h5" component="div">
            {props.book.title}
            <Typography gutterBottom variant="h6" component="div">
-             Author(s) : {props.book.author}
+             Author: {props.book.author}
            </Typography>
           </Typography>
           <Typography variant="body2" color="text.secondary">
