@@ -3,12 +3,12 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
+import Button from '@mui/material/Button';
+import CardActions from '@mui/material/CardActions';
 
-const Book = (props) => {
+const BookItem = (props) => {
  return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardActionArea>
+    <Card sx={{ maxWidth: 345, height: 'auto' }}>
         <CardMedia
           component="img"
           height="590"
@@ -19,16 +19,19 @@ const Book = (props) => {
           <Typography gutterBottom variant="h5" component="div">
            {props.book.title}
            <Typography gutterBottom variant="h6" component="div">
-            {props.book.author}
+             Author(s) : {props.book.author}
            </Typography>
           </Typography>
           <Typography variant="body2" color="text.secondary">
             {props.book.description}
           </Typography>
-        </CardContent>
-      </CardActionArea>
+       </CardContent>
+       <CardActions>
+        <Button size="small">Share</Button>
+        <Button size="small">Learn More</Button>
+      </CardActions>
     </Card>
   );
 }
 
-export default Book
+export default BookItem

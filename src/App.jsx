@@ -1,6 +1,6 @@
 import './App.css';
 import { useEffect, useState } from 'react';
-import Book from './Book';
+import BookGrid from './BookGrid';
 
 const key = 'OLwLmtGas8CilAAxE7ZXaSnSfFgvdhGQ'
 
@@ -26,16 +26,11 @@ function App() {
 
   })
 
-  const data = state.books.map((book, i) => {
-    return (
-      <Book book= {book} />
-    )
-  })
+ 
 
   return (
     <div className="App">
-      books!!!
-      {data}
+      <BookGrid books={state.books} />
     </div>
   );
 }
