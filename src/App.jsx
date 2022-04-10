@@ -11,8 +11,7 @@ function App() {
     books : []
   });
 
-
-  useEffect(() => {
+  const fetchHardCoverBooks = () => {
     fetch(`https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${key}`)
       .then(resp => resp.json())
       .then(resp => {
@@ -22,7 +21,21 @@ function App() {
           books: resp.results.books
         })
       })
-    
+  }
+
+  const fetchBestSellers = () => {
+    fetch(`https://api.nytimes.com/svc/books/v3/lists/names?api-key=${key}`)
+      .then(resp => resp.json())
+      .then(resp => {
+        console.log(resp)
+        
+      })
+  }
+
+
+  useEffect(() => {
+    fetchHardCoverBooks();
+    fetchBestSellers();    
 
   }, [])
 

@@ -8,12 +8,10 @@ import CardActions from '@mui/material/CardActions';
 
 const BookItem = (props) => {
 
-  const learnMore = () => {
-    
-  }
+  
 
  return (
-    <Card sx={{ maxWidth: 345, height: 'auto' }}>
+    <Card sx={{ maxWidth: 400, height: 'auto' }}>
         <CardMedia
           component="img"
           height="590"
@@ -32,7 +30,7 @@ const BookItem = (props) => {
           </Typography>
        </CardContent>
        <CardActions>
-        <Button size="small">SHARE</Button>
+        <Button href={`mailto:?subject=Checkout this book&body=${props.book.title} ${props.book.amazon_product_url}`} title="Share viaEmail" size="small" > SHARE</Button>
         <Button size="small" onClick={() => window.open(`${props.book.amazon_product_url}`, "_blank")}>Amazon</Button>
       </CardActions>
     </Card>
